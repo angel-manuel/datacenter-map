@@ -2,12 +2,21 @@ import { useReducer, useCallback } from 'react';
 
 export type ActiveTab = 'countries' | 'companies' | 'details';
 
+export type DCType = 'ai' | 'cloud' | 'internal' | 'mixed';
+export type DCStatus = 'operational' | 'under_construction' | 'planned';
+
+export const ALL_TYPES: DCType[] = ['ai', 'cloud', 'internal', 'mixed'];
+export const ALL_STATUSES: DCStatus[] = ['operational', 'under_construction', 'planned'];
+
 export interface SelectionState {
   selectedCountryCode: string | null;
   selectedCompany: string | null;
   selectedDatacenterId: string | null;
   activeTab: ActiveTab;
   hoveredCountryCode: string | null;
+  activeTypes: Set<DCType>;
+  activeStatuses: Set<DCStatus>;
+  mwRange: [number, number];
 }
 
 type Action =
@@ -16,7 +25,14 @@ type Action =
   | { type: 'SELECT_DATACENTER'; id: string; countryCode: string; company: string }
   | { type: 'HOVER_COUNTRY'; code: string | null }
   | { type: 'CLEAR_SELECTION' }
-  | { type: 'SET_TAB'; tab: ActiveTab };
+  | { type: 'SET_TAB'; tab: ActiveTab }
+  | { type: 'TOGGLE_TYPE'; dcType: DCType }
+  | { type: 'TOGGLE_STATUS'; status: DCStatus }
+  | { type: 'SET_MW_RANGE'; range: [number, number] }
+  | { type: 'RESET_FILTERS' };
+
+export const MW_MIN = 0;
+export const MW_MAX = 1000;
 
 const initialState: SelectionState = {
   selectedCountryCode: null,
@@ -24,6 +40,9 @@ const initialState: SelectionState = {
   selectedDatacenterId: null,
   activeTab: 'countries',
   hoveredCountryCode: null,
+  activeTypes: new Set(ALL_TYPES),
+  activeStatuses: new Set(ALL_STATUSES),
+  mwRange: [MW_MIN, MW_MAX],
 };
 
 function reducer(state: SelectionState, action: Action): SelectionState {
@@ -61,6 +80,33 @@ function reducer(state: SelectionState, action: Action): SelectionState {
       return { ...initialState };
     case 'SET_TAB':
       return { ...state, activeTab: action.tab };
+    case 'TOGGLE_TYPE': {
+      const next = new Set(state.activeTypes);
+      if (next.has(action.dcType)) {
+        if (next.size > 1) next.delete(action.dcType);
+      } else {
+        next.add(action.dcType);
+      }
+      return { ...state, activeTypes: next };
+    }
+    case 'TOGGLE_STATUS': {
+      const next = new Set(state.activeStatuses);
+      if (next.has(action.status)) {
+        if (next.size > 1) next.delete(action.status);
+      } else {
+        next.add(action.status);
+      }
+      return { ...state, activeStatuses: next };
+    }
+    case 'SET_MW_RANGE':
+      return { ...state, mwRange: action.range };
+    case 'RESET_FILTERS':
+      return {
+        ...state,
+        activeTypes: new Set(ALL_TYPES),
+        activeStatuses: new Set(ALL_STATUSES),
+        mwRange: [MW_MIN, MW_MAX],
+      };
     default:
       return state;
   }
@@ -93,6 +139,22 @@ export function useMapSelection() {
     dispatch({ type: 'SET_TAB', tab });
   }, []);
 
+  const toggleType = useCallback((dcType: DCType) => {
+    dispatch({ type: 'TOGGLE_TYPE', dcType });
+  }, []);
+
+  const toggleStatus = useCallback((status: DCStatus) => {
+    dispatch({ type: 'TOGGLE_STATUS', status });
+  }, []);
+
+  const setMwRange = useCallback((range: [number, number]) => {
+    dispatch({ type: 'SET_MW_RANGE', range });
+  }, []);
+
+  const resetFilters = useCallback(() => {
+    dispatch({ type: 'RESET_FILTERS' });
+  }, []);
+
   return {
     state,
     selectCountry,
@@ -101,5 +163,9 @@ export function useMapSelection() {
     hoverCountry,
     clearSelection,
     setTab,
+    toggleType,
+    toggleStatus,
+    setMwRange,
+    resetFilters,
   };
 }

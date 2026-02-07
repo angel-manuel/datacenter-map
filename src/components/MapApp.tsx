@@ -17,18 +17,32 @@ export default function MapApp() {
     hoverCountry,
     clearSelection,
     setTab,
+    toggleType,
+    toggleStatus,
+    setMwRange,
+    resetFilters,
   } = useMapSelection();
 
-  const countries = useMemo(() => buildCountrySummaries(datacenters), [datacenters]);
-  const companies = useMemo(() => buildCompanySummaries(datacenters), [datacenters]);
+  const filteredDCs = useMemo(
+    () => datacenters.filter((dc) =>
+      state.activeTypes.has(dc.type) &&
+      state.activeStatuses.has(dc.status) &&
+      dc.capacity_mw >= state.mwRange[0] &&
+      dc.capacity_mw <= state.mwRange[1]
+    ),
+    [datacenters, state.activeTypes, state.activeStatuses, state.mwRange]
+  );
+
+  const countries = useMemo(() => buildCountrySummaries(filteredDCs), [filteredDCs]);
+  const companies = useMemo(() => buildCompanySummaries(filteredDCs), [filteredDCs]);
   const countriesWithDCs = useMemo(
-    () => new Set(datacenters.map((dc) => dc.country_code)),
-    [datacenters]
+    () => new Set(filteredDCs.map((dc) => dc.country_code)),
+    [filteredDCs]
   );
 
   const selectedDC = useMemo(
-    () => (state.selectedDatacenterId ? datacenters.find((d) => d.id === state.selectedDatacenterId) : undefined),
-    [state.selectedDatacenterId, datacenters]
+    () => (state.selectedDatacenterId ? filteredDCs.find((d) => d.id === state.selectedDatacenterId) : undefined),
+    [state.selectedDatacenterId, filteredDCs]
   );
 
   if (dcLoading || geoLoading) {
@@ -52,7 +66,7 @@ export default function MapApp() {
     <div className="app-layout">
       <div className="map-container">
         <MapView
-          datacenters={datacenters}
+          datacenters={filteredDCs}
           geoData={geoData}
           countriesWithDCs={countriesWithDCs}
           selectedCountryCode={state.selectedCountryCode}
@@ -74,7 +88,15 @@ export default function MapApp() {
         selectedCountryCode={state.selectedCountryCode}
         selectedCompany={state.selectedCompany}
         selectedDatacenter={selectedDC}
-        totalDCs={datacenters.length}
+        totalDCs={filteredDCs.length}
+        totalAll={datacenters.length}
+        activeTypes={state.activeTypes}
+        activeStatuses={state.activeStatuses}
+        mwRange={state.mwRange}
+        onToggleType={toggleType}
+        onToggleStatus={toggleStatus}
+        onSetMwRange={setMwRange}
+        onResetFilters={resetFilters}
         onSelectCountry={selectCountry}
         onSelectCompany={selectCompany}
         onSelectDatacenter={selectDatacenter}

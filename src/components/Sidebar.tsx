@@ -1,5 +1,7 @@
-import type { ActiveTab } from '../hooks/useMapSelection';
+import type { ActiveTab, DCType, DCStatus } from '../hooks/useMapSelection';
+import { ALL_TYPES, ALL_STATUSES, MW_MIN, MW_MAX } from '../hooks/useMapSelection';
 import type { CountrySummary, CompanySummary, Datacenter } from '../types/datacenter';
+import { typeColor, typeLabel, statusLabel, formatMW } from '../lib/dataUtils';
 import SidebarCountryTab from './SidebarCountryTab';
 import SidebarCompanyTab from './SidebarCompanyTab';
 import SidebarDetailsTab from './SidebarDetailsTab';
@@ -13,6 +15,14 @@ interface Props {
   selectedCompany: string | null;
   selectedDatacenter: Datacenter | undefined;
   totalDCs: number;
+  totalAll: number;
+  activeTypes: Set<DCType>;
+  activeStatuses: Set<DCStatus>;
+  mwRange: [number, number];
+  onToggleType: (t: DCType) => void;
+  onToggleStatus: (s: DCStatus) => void;
+  onSetMwRange: (range: [number, number]) => void;
+  onResetFilters: () => void;
   onSelectCountry: (code: string) => void;
   onSelectCompany: (company: string) => void;
   onSelectDatacenter: (id: string, countryCode: string, company: string) => void;
@@ -25,6 +35,12 @@ const tabs: { key: ActiveTab; label: string }[] = [
   { key: 'details', label: 'Details' },
 ];
 
+const statusColors: Record<DCStatus, string> = {
+  operational: '#4ade80',
+  under_construction: '#fbbf24',
+  planned: '#94a3b8',
+};
+
 export default function Sidebar({
   activeTab,
   onSetTab,
@@ -34,18 +50,112 @@ export default function Sidebar({
   selectedCompany,
   selectedDatacenter,
   totalDCs,
+  totalAll,
+  activeTypes,
+  activeStatuses,
+  mwRange,
+  onToggleType,
+  onToggleStatus,
+  onSetMwRange,
+  onResetFilters,
   onSelectCountry,
   onSelectCompany,
   onSelectDatacenter,
-  onClearSelection,
 }: Props) {
+  const isFiltered = totalDCs !== totalAll;
+  const hasNonDefaultFilters =
+    activeTypes.size !== ALL_TYPES.length ||
+    activeStatuses.size !== ALL_STATUSES.length ||
+    mwRange[0] !== MW_MIN ||
+    mwRange[1] !== MW_MAX;
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
         <h1 className="sidebar-title">Datacenter World Map</h1>
         <div className="sidebar-subtitle">
-          {totalDCs} datacenters across {countries.length} countries
+          {isFiltered ? `${totalDCs} of ${totalAll}` : totalDCs} datacenters across {countries.length} countries
         </div>
+      </div>
+
+      <div className="sidebar-filters">
+        <div className="filter-group">
+          <div className="filter-label">Type</div>
+          <div className="filter-chips">
+            {ALL_TYPES.map((t) => {
+              const active = activeTypes.has(t);
+              return (
+                <button
+                  key={t}
+                  className={`filter-chip ${active ? 'active' : ''}`}
+                  style={{ '--chip-color': typeColor(t) } as React.CSSProperties}
+                  onClick={() => onToggleType(t)}
+                >
+                  <span className="filter-chip-dot" style={{ background: typeColor(t) }} />
+                  {typeLabel(t)}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <div className="filter-label">Status</div>
+          <div className="filter-chips">
+            {ALL_STATUSES.map((s) => {
+              const active = activeStatuses.has(s);
+              return (
+                <button
+                  key={s}
+                  className={`filter-chip ${active ? 'active' : ''}`}
+                  style={{ '--chip-color': statusColors[s] } as React.CSSProperties}
+                  onClick={() => onToggleStatus(s)}
+                >
+                  <span className="filter-chip-dot" style={{ background: statusColors[s] }} />
+                  {statusLabel(s)}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="filter-group">
+          <div className="filter-label">
+            Capacity: {formatMW(mwRange[0])} &ndash; {formatMW(mwRange[1])}
+          </div>
+          <div className="mw-slider-container">
+            <input
+              type="range"
+              className="mw-slider"
+              min={MW_MIN}
+              max={MW_MAX}
+              step={10}
+              value={mwRange[0]}
+              onChange={(e) => {
+                const v = Number(e.target.value);
+                onSetMwRange([Math.min(v, mwRange[1]), mwRange[1]]);
+              }}
+            />
+            <input
+              type="range"
+              className="mw-slider"
+              min={MW_MIN}
+              max={MW_MAX}
+              step={10}
+              value={mwRange[1]}
+              onChange={(e) => {
+                const v = Number(e.target.value);
+                onSetMwRange([mwRange[0], Math.max(v, mwRange[0])]);
+              }}
+            />
+          </div>
+        </div>
+
+        {hasNonDefaultFilters && (
+          <button className="reset-filters-btn" onClick={onResetFilters}>
+            Reset Filters
+          </button>
+        )}
       </div>
 
       <div className="sidebar-tabs">
@@ -84,16 +194,6 @@ export default function Sidebar({
             onSelectCountry={onSelectCountry}
           />
         )}
-      </div>
-
-      <div className="sidebar-legend">
-        <div className="legend-title">Type Legend</div>
-        <div className="legend-items">
-          <span className="legend-item"><span className="legend-dot" style={{ background: '#ef4444' }} /> AI</span>
-          <span className="legend-item"><span className="legend-dot" style={{ background: '#3b82f6' }} /> Cloud</span>
-          <span className="legend-item"><span className="legend-dot" style={{ background: '#22c55e' }} /> Internal</span>
-          <span className="legend-item"><span className="legend-dot" style={{ background: '#f59e0b' }} /> Mixed</span>
-        </div>
       </div>
     </div>
   );
