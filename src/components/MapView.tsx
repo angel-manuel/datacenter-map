@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
 import { MapContainer, TileLayer, useMap } from 'react-leaflet';
 import type { FeatureCollection, Geometry } from 'geojson';
-import type { Datacenter } from '../types/datacenter';
+import type { Datacenter, SubmarineCable, LandingPoint, IXP, MetroConnection, OverlayType } from '../types/datacenter';
 import type { CountryFeatureProperties } from '../hooks/useCountryGeo';
 import CountryLayer from './CountryLayer';
 import DatacenterMarkers from './DatacenterMarkers';
+import SubmarineCableLayer from './SubmarineCableLayer';
+import LandingPointMarkers from './LandingPointMarkers';
+import IXPMarkerLayer from './IXPMarkerLayer';
+import MetroConnectionLayer from './MetroConnectionLayer';
 import { numericToAlpha2Code } from '../lib/countryLookup';
 import L from 'leaflet';
 
@@ -20,10 +24,20 @@ interface Props {
   selectedCountryCode: string | null;
   selectedCompany: string | null;
   selectedDatacenterId: string | null;
+  selectedCableId: string | null;
+  selectedIxpId: string | null;
   hoveredCountryCode: string | null;
+  activeOverlays: Set<OverlayType>;
+  cableGeoData: FeatureCollection | null;
+  cableMeta: SubmarineCable[];
+  landingPoints: LandingPoint[];
+  ixps: IXP[];
+  metroConnections: MetroConnection[];
   onSelectCountry: (code: string) => void;
   onSelectCompany: (company: string) => void;
   onSelectDatacenter: (id: string, countryCode: string, company: string) => void;
+  onSelectCable: (id: string) => void;
+  onSelectIxp: (id: string) => void;
   onHoverCountry: (code: string | null) => void;
   onClearSelection: () => void;
 }
@@ -78,13 +92,28 @@ export default function MapView({
   selectedCountryCode,
   selectedCompany,
   selectedDatacenterId,
+  selectedCableId,
+  selectedIxpId,
   hoveredCountryCode,
+  activeOverlays,
+  cableGeoData,
+  cableMeta,
+  landingPoints,
+  ixps,
+  metroConnections,
   onSelectCountry,
   onSelectCompany,
   onSelectDatacenter,
+  onSelectCable,
+  onSelectIxp,
   onHoverCountry,
   onClearSelection,
 }: Props) {
+  const showCables = activeOverlays.has('submarineCables');
+  const showIxps = activeOverlays.has('ixps');
+  const showConnections = activeOverlays.has('connections');
+  const showDatacenters = activeOverlays.has('datacenters');
+
   return (
     <MapContainer
       center={[20, 0]}
@@ -111,16 +140,46 @@ export default function MapView({
         />
       )}
 
-      <DatacenterMarkers
-        datacenters={datacenters}
-        futureDCIds={futureDCIds}
-        selectedCountryCode={selectedCountryCode}
-        selectedCompany={selectedCompany}
-        selectedDatacenterId={selectedDatacenterId}
-        onSelectDatacenter={onSelectDatacenter}
-        onSelectCompany={onSelectCompany}
-        onSelectCountry={onSelectCountry}
-      />
+      {showCables && cableGeoData && (
+        <SubmarineCableLayer
+          geoData={cableGeoData}
+          selectedCableId={selectedCableId}
+          onSelectCable={onSelectCable}
+        />
+      )}
+
+      {showConnections && metroConnections.length > 0 && (
+        <MetroConnectionLayer connections={metroConnections} />
+      )}
+
+      {showCables && landingPoints.length > 0 && (
+        <LandingPointMarkers
+          landingPoints={landingPoints}
+          cableMeta={cableMeta}
+          selectedCableId={selectedCableId}
+        />
+      )}
+
+      {showDatacenters && (
+        <DatacenterMarkers
+          datacenters={datacenters}
+          futureDCIds={futureDCIds}
+          selectedCountryCode={selectedCountryCode}
+          selectedCompany={selectedCompany}
+          selectedDatacenterId={selectedDatacenterId}
+          onSelectDatacenter={onSelectDatacenter}
+          onSelectCompany={onSelectCompany}
+          onSelectCountry={onSelectCountry}
+        />
+      )}
+
+      {showIxps && ixps.length > 0 && (
+        <IXPMarkerLayer
+          ixps={ixps}
+          selectedIxpId={selectedIxpId}
+          onSelectIxp={onSelectIxp}
+        />
+      )}
 
       <MapPanHandler selectedDatacenterId={selectedDatacenterId} datacenters={datacenters} />
       {geoData && (

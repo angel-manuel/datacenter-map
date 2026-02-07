@@ -9,6 +9,9 @@
   --accent-blue: #3b82f6;
   --accent-blue-hover: #60a5fa;
   --sidebar-width: 380px;
+  --overlay-cable: #06b6d4;
+  --overlay-ixp: #a855f7;
+  --overlay-connection: #60a5fa;
 }
 
 *,
@@ -577,6 +580,107 @@ html, body {
   border-color: var(--accent-blue);
   color: var(--accent-blue);
   background: rgba(59, 130, 246, 0.08);
+}
+
+/* Overlay Selector */
+.overlay-selector {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 1000;
+  background: rgba(30, 41, 59, 0.92);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  backdrop-filter: blur(8px);
+  min-width: 170px;
+}
+
+.overlay-selector-title {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.overlay-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 3px 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.overlay-option:hover {
+  color: var(--text-primary);
+}
+
+.overlay-option.active {
+  color: var(--text-primary);
+}
+
+.overlay-checkbox {
+  width: 13px;
+  height: 13px;
+  accent-color: var(--accent-blue);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.overlay-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+
+.overlay-option:not(.active) .overlay-dot {
+  opacity: 0.35;
+}
+
+.overlay-label {
+  white-space: nowrap;
+}
+
+/* Cable tooltip */
+.cable-tooltip {
+  background: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 4px !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+}
+
+.cable-tooltip::before {
+  border-top-color: var(--border-color) !important;
+}
+
+/* Cable landing point tags */
+.cable-landing-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.landing-point-tag {
+  font-size: 11px;
+  color: var(--text-secondary);
+  background: var(--bg-elevated);
+  padding: 2px 6px;
+  border-radius: 3px;
 }
 
 /* Leaflet overrides */

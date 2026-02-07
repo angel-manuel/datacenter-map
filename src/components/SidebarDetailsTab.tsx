@@ -1,13 +1,26 @@
-import type { Datacenter } from '../types/datacenter';
+import type { Datacenter, SubmarineCable, LandingPoint, IXP } from '../types/datacenter';
 import { formatMW, typeColor, typeLabel, statusLabel } from '../lib/dataUtils';
+import SidebarCableDetails from './SidebarCableDetails';
+import SidebarIXPDetails from './SidebarIXPDetails';
 
 interface Props {
   datacenter: Datacenter | undefined;
+  cable: SubmarineCable | undefined;
+  ixp: IXP | undefined;
+  landingPoints: LandingPoint[];
   onSelectCompany: (company: string) => void;
   onSelectCountry: (code: string) => void;
 }
 
-export default function SidebarDetailsTab({ datacenter, onSelectCompany, onSelectCountry }: Props) {
+export default function SidebarDetailsTab({ datacenter, cable, ixp, landingPoints, onSelectCompany, onSelectCountry }: Props) {
+  if (cable) {
+    return <SidebarCableDetails cable={cable} landingPoints={landingPoints} />;
+  }
+
+  if (ixp) {
+    return <SidebarIXPDetails ixp={ixp} />;
+  }
+
   if (!datacenter) {
     return (
       <div className="sidebar-empty">

@@ -1,4 +1,5 @@
 import { useReducer, useCallback } from 'react';
+import type { OverlayType } from '../types/datacenter';
 
 export type ActiveTab = 'countries' | 'companies' | 'details';
 
@@ -7,15 +8,20 @@ export type DCStatus = 'operational' | 'under_construction' | 'planned';
 
 export const ALL_TYPES: DCType[] = ['ai', 'cloud', 'internal', 'mixed'];
 export const ALL_STATUSES: DCStatus[] = ['operational', 'under_construction', 'planned'];
+export const ALL_OVERLAYS: OverlayType[] = ['datacenters', 'submarineCables', 'ixps', 'connections'];
+export const DEFAULT_OVERLAYS: OverlayType[] = ['datacenters'];
 
 export interface SelectionState {
   selectedCountryCode: string | null;
   selectedCompany: string | null;
   selectedDatacenterId: string | null;
+  selectedCableId: string | null;
+  selectedIxpId: string | null;
   activeTab: ActiveTab;
   hoveredCountryCode: string | null;
   activeTypes: Set<DCType>;
   activeStatuses: Set<DCStatus>;
+  activeOverlays: Set<OverlayType>;
   mwRange: [number, number];
   selectedYear: number;
   showPlanned: boolean;
@@ -25,11 +31,14 @@ type Action =
   | { type: 'SELECT_COUNTRY'; code: string }
   | { type: 'SELECT_COMPANY'; company: string }
   | { type: 'SELECT_DATACENTER'; id: string; countryCode: string; company: string }
+  | { type: 'SELECT_CABLE'; id: string }
+  | { type: 'SELECT_IXP'; id: string }
   | { type: 'HOVER_COUNTRY'; code: string | null }
   | { type: 'CLEAR_SELECTION' }
   | { type: 'SET_TAB'; tab: ActiveTab }
   | { type: 'TOGGLE_TYPE'; dcType: DCType }
   | { type: 'TOGGLE_STATUS'; status: DCStatus }
+  | { type: 'TOGGLE_OVERLAY'; overlay: OverlayType }
   | { type: 'SET_MW_RANGE'; range: [number, number] }
   | { type: 'SET_YEAR'; year: number }
   | { type: 'TOGGLE_SHOW_PLANNED' }
@@ -46,10 +55,13 @@ const initialState: SelectionState = {
   selectedCountryCode: null,
   selectedCompany: null,
   selectedDatacenterId: null,
+  selectedCableId: null,
+  selectedIxpId: null,
   activeTab: 'countries',
   hoveredCountryCode: null,
   activeTypes: new Set(ALL_TYPES),
   activeStatuses: new Set(ALL_STATUSES),
+  activeOverlays: new Set<OverlayType>(DEFAULT_OVERLAYS),
   mwRange: [MW_MIN, MW_MAX],
   selectedYear: YEAR_DEFAULT,
   showPlanned: true,
@@ -63,6 +75,8 @@ function reducer(state: SelectionState, action: Action): SelectionState {
         selectedCountryCode: action.code === state.selectedCountryCode ? null : action.code,
         selectedCompany: null,
         selectedDatacenterId: null,
+        selectedCableId: null,
+        selectedIxpId: null,
         activeTab: 'countries',
         hoveredCountryCode: null,
       };
@@ -72,6 +86,8 @@ function reducer(state: SelectionState, action: Action): SelectionState {
         selectedCompany: action.company === state.selectedCompany ? null : action.company,
         selectedCountryCode: null,
         selectedDatacenterId: null,
+        selectedCableId: null,
+        selectedIxpId: null,
         activeTab: 'companies',
         hoveredCountryCode: null,
       };
@@ -81,13 +97,33 @@ function reducer(state: SelectionState, action: Action): SelectionState {
         selectedDatacenterId: action.id === state.selectedDatacenterId ? null : action.id,
         selectedCountryCode: action.countryCode,
         selectedCompany: action.company,
+        selectedCableId: null,
+        selectedIxpId: null,
+        activeTab: 'details',
+        hoveredCountryCode: null,
+      };
+    case 'SELECT_CABLE':
+      return {
+        ...state,
+        selectedCableId: action.id === state.selectedCableId ? null : action.id,
+        selectedDatacenterId: null,
+        selectedIxpId: null,
+        activeTab: 'details',
+        hoveredCountryCode: null,
+      };
+    case 'SELECT_IXP':
+      return {
+        ...state,
+        selectedIxpId: action.id === state.selectedIxpId ? null : action.id,
+        selectedDatacenterId: null,
+        selectedCableId: null,
         activeTab: 'details',
         hoveredCountryCode: null,
       };
     case 'HOVER_COUNTRY':
       return { ...state, hoveredCountryCode: action.code };
     case 'CLEAR_SELECTION':
-      return { ...initialState };
+      return { ...initialState, activeOverlays: state.activeOverlays };
     case 'SET_TAB':
       return { ...state, activeTab: action.tab };
     case 'TOGGLE_TYPE': {
@@ -107,6 +143,15 @@ function reducer(state: SelectionState, action: Action): SelectionState {
         next.add(action.status);
       }
       return { ...state, activeStatuses: next };
+    }
+    case 'TOGGLE_OVERLAY': {
+      const next = new Set(state.activeOverlays);
+      if (next.has(action.overlay)) {
+        next.delete(action.overlay);
+      } else {
+        next.add(action.overlay);
+      }
+      return { ...state, activeOverlays: next };
     }
     case 'SET_MW_RANGE':
       return { ...state, mwRange: action.range };
@@ -179,16 +224,31 @@ export function useMapSelection() {
     dispatch({ type: 'RESET_FILTERS' });
   }, []);
 
+  const toggleOverlay = useCallback((overlay: OverlayType) => {
+    dispatch({ type: 'TOGGLE_OVERLAY', overlay });
+  }, []);
+
+  const selectCable = useCallback((id: string) => {
+    dispatch({ type: 'SELECT_CABLE', id });
+  }, []);
+
+  const selectIxp = useCallback((id: string) => {
+    dispatch({ type: 'SELECT_IXP', id });
+  }, []);
+
   return {
     state,
     selectCountry,
     selectCompany,
     selectDatacenter,
+    selectCable,
+    selectIxp,
     hoverCountry,
     clearSelection,
     setTab,
     toggleType,
     toggleStatus,
+    toggleOverlay,
     setMwRange,
     setYear,
     toggleShowPlanned,
