@@ -35,6 +35,10 @@ export default function DatacenterPopup({ dc, onSelectCompany, onSelectCountry }
         {formatMW(dc.capacity_mw)}
       </div>
       <div style={{ marginBottom: 4 }}>
+        <span style={{ color: '#94a3b8' }}>Year: </span>
+        {dc.year_opened}
+      </div>
+      <div style={{ marginBottom: 4 }}>
         <span
           style={{
             display: 'inline-block',

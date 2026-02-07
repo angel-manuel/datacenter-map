@@ -17,6 +17,8 @@ export interface SelectionState {
   activeTypes: Set<DCType>;
   activeStatuses: Set<DCStatus>;
   mwRange: [number, number];
+  selectedYear: number;
+  showPlanned: boolean;
 }
 
 type Action =
@@ -29,10 +31,16 @@ type Action =
   | { type: 'TOGGLE_TYPE'; dcType: DCType }
   | { type: 'TOGGLE_STATUS'; status: DCStatus }
   | { type: 'SET_MW_RANGE'; range: [number, number] }
+  | { type: 'SET_YEAR'; year: number }
+  | { type: 'TOGGLE_SHOW_PLANNED' }
   | { type: 'RESET_FILTERS' };
 
 export const MW_MIN = 0;
 export const MW_MAX = 1000;
+
+export const YEAR_MIN = 1998;
+export const YEAR_MAX = 2030;
+export const YEAR_DEFAULT = 2026;
 
 const initialState: SelectionState = {
   selectedCountryCode: null,
@@ -43,6 +51,8 @@ const initialState: SelectionState = {
   activeTypes: new Set(ALL_TYPES),
   activeStatuses: new Set(ALL_STATUSES),
   mwRange: [MW_MIN, MW_MAX],
+  selectedYear: YEAR_DEFAULT,
+  showPlanned: true,
 };
 
 function reducer(state: SelectionState, action: Action): SelectionState {
@@ -100,12 +110,18 @@ function reducer(state: SelectionState, action: Action): SelectionState {
     }
     case 'SET_MW_RANGE':
       return { ...state, mwRange: action.range };
+    case 'SET_YEAR':
+      return { ...state, selectedYear: action.year };
+    case 'TOGGLE_SHOW_PLANNED':
+      return { ...state, showPlanned: !state.showPlanned };
     case 'RESET_FILTERS':
       return {
         ...state,
         activeTypes: new Set(ALL_TYPES),
         activeStatuses: new Set(ALL_STATUSES),
         mwRange: [MW_MIN, MW_MAX],
+        selectedYear: YEAR_DEFAULT,
+        showPlanned: true,
       };
     default:
       return state;
@@ -151,6 +167,14 @@ export function useMapSelection() {
     dispatch({ type: 'SET_MW_RANGE', range });
   }, []);
 
+  const setYear = useCallback((year: number) => {
+    dispatch({ type: 'SET_YEAR', year });
+  }, []);
+
+  const toggleShowPlanned = useCallback(() => {
+    dispatch({ type: 'TOGGLE_SHOW_PLANNED' });
+  }, []);
+
   const resetFilters = useCallback(() => {
     dispatch({ type: 'RESET_FILTERS' });
   }, []);
@@ -166,6 +190,8 @@ export function useMapSelection() {
     toggleType,
     toggleStatus,
     setMwRange,
+    setYear,
+    toggleShowPlanned,
     resetFilters,
   };
 }

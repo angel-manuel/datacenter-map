@@ -8,6 +8,7 @@ import DatacenterPopup from './DatacenterPopup';
 
 interface Props {
   datacenters: Datacenter[];
+  futureDCIds: Set<string>;
   selectedCountryCode: string | null;
   selectedCompany: string | null;
   selectedDatacenterId: string | null;
@@ -16,11 +17,24 @@ interface Props {
   onSelectCountry: (code: string) => void;
 }
 
-function createIcon(dc: Datacenter, isHighlighted: boolean, hasSelection: boolean): L.DivIcon {
+function markerSize(capacity_mw: number, isHighlighted: boolean): number {
+  const minSize = isHighlighted ? 8 : 6;
+  const maxSize = isHighlighted ? 28 : 22;
+  if (capacity_mw <= 0) return minSize;
+  const t = Math.min(Math.log10(capacity_mw + 1) / Math.log10(901), 1);
+  return Math.round(minSize + t * (maxSize - minSize));
+}
+
+function createIcon(dc: Datacenter, isHighlighted: boolean, hasSelection: boolean, isFuture: boolean): L.DivIcon {
   const color = typeColor(dc.type);
-  const size = isHighlighted ? 14 : 10;
-  const opacity = hasSelection && !isHighlighted ? 0.35 : 1;
-  const border = isHighlighted ? `2px solid #fff` : `1.5px solid rgba(255,255,255,0.5)`;
+  const size = markerSize(dc.capacity_mw, isHighlighted);
+  let opacity = hasSelection && !isHighlighted ? 0.35 : 1;
+  if (isFuture) opacity = Math.min(opacity, 0.35);
+  const border = isFuture
+    ? `1.5px dashed rgba(255,255,255,0.5)`
+    : isHighlighted
+      ? `2px solid #fff`
+      : `1.5px solid rgba(255,255,255,0.5)`;
 
   return L.divIcon({
     className: '',
@@ -30,10 +44,10 @@ function createIcon(dc: Datacenter, isHighlighted: boolean, hasSelection: boolea
       width:${size}px;
       height:${size}px;
       border-radius:50%;
-      background:${color};
+      background:${isFuture ? `${color}60` : color};
       border:${border};
       opacity:${opacity};
-      box-shadow:0 0 ${isHighlighted ? 8 : 4}px ${color}80;
+      box-shadow:0 0 ${isHighlighted ? 8 : 4}px ${color}${isFuture ? '40' : '80'};
       transition: all 0.2s;
     "></div>`,
   });
@@ -41,6 +55,7 @@ function createIcon(dc: Datacenter, isHighlighted: boolean, hasSelection: boolea
 
 export default function DatacenterMarkers({
   datacenters,
+  futureDCIds,
   selectedCountryCode,
   selectedCompany,
   selectedDatacenterId,
@@ -57,12 +72,13 @@ export default function DatacenterMarkers({
           dc.id === selectedDatacenterId ||
           (selectedCompany != null && dc.owner === selectedCompany) ||
           (selectedCountryCode != null && dc.country_code === selectedCountryCode);
+        const isFuture = futureDCIds.has(dc.id);
 
         return (
           <Marker
             key={dc.id}
             position={[dc.lat, dc.lng]}
-            icon={createIcon(dc, isHighlighted, hasSelection)}
+            icon={createIcon(dc, isHighlighted, hasSelection, isFuture)}
             eventHandlers={{
               click: () => onSelectDatacenter(dc.id, dc.country_code, dc.owner),
             }}
@@ -77,7 +93,7 @@ export default function DatacenterMarkers({
           </Marker>
         );
       }),
-    [datacenters, selectedCountryCode, selectedCompany, selectedDatacenterId, hasSelection, onSelectDatacenter, onSelectCompany, onSelectCountry]
+    [datacenters, futureDCIds, selectedCountryCode, selectedCompany, selectedDatacenterId, hasSelection, onSelectDatacenter, onSelectCompany, onSelectCountry]
   );
 
   return (

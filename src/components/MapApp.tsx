@@ -20,6 +20,8 @@ export default function MapApp() {
     toggleType,
     toggleStatus,
     setMwRange,
+    setYear,
+    toggleShowPlanned,
     resetFilters,
   } = useMapSelection();
 
@@ -28,9 +30,19 @@ export default function MapApp() {
       state.activeTypes.has(dc.type) &&
       state.activeStatuses.has(dc.status) &&
       dc.capacity_mw >= state.mwRange[0] &&
-      dc.capacity_mw <= state.mwRange[1]
+      dc.capacity_mw <= state.mwRange[1] &&
+      (dc.year_opened <= state.selectedYear || state.showPlanned)
     ),
-    [datacenters, state.activeTypes, state.activeStatuses, state.mwRange]
+    [datacenters, state.activeTypes, state.activeStatuses, state.mwRange, state.selectedYear, state.showPlanned]
+  );
+
+  const futureDCIds = useMemo(
+    () => new Set(
+      filteredDCs
+        .filter((dc) => dc.year_opened > state.selectedYear)
+        .map((dc) => dc.id)
+    ),
+    [filteredDCs, state.selectedYear]
   );
 
   const countries = useMemo(() => buildCountrySummaries(filteredDCs), [filteredDCs]);
@@ -67,6 +79,7 @@ export default function MapApp() {
       <div className="map-container">
         <MapView
           datacenters={filteredDCs}
+          futureDCIds={futureDCIds}
           geoData={geoData}
           countriesWithDCs={countriesWithDCs}
           selectedCountryCode={state.selectedCountryCode}
@@ -93,9 +106,13 @@ export default function MapApp() {
         activeTypes={state.activeTypes}
         activeStatuses={state.activeStatuses}
         mwRange={state.mwRange}
+        selectedYear={state.selectedYear}
+        showPlanned={state.showPlanned}
         onToggleType={toggleType}
         onToggleStatus={toggleStatus}
         onSetMwRange={setMwRange}
+        onSetYear={setYear}
+        onToggleShowPlanned={toggleShowPlanned}
         onResetFilters={resetFilters}
         onSelectCountry={selectCountry}
         onSelectCompany={selectCompany}

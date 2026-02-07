@@ -64,6 +64,10 @@ export default function SidebarDetailsTab({ datacenter, onSelectCompany, onSelec
           <span>{formatMW(datacenter.capacity_mw)}</span>
         </div>
         <div className="details-row">
+          <span className="details-label">Year Opened</span>
+          <span>{datacenter.year_opened}</span>
+        </div>
+        <div className="details-row">
           <span className="details-label">Coordinates</span>
           <span>{datacenter.lat.toFixed(4)}, {datacenter.lng.toFixed(4)}</span>
         </div>

@@ -13,7 +13,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "One of Google's largest US campuses, 2.89M sqft, opened 2009"
+    "notes": "One of Google's largest US campuses, 2.89M sqft, opened 2009",
+    "year_opened": 2009
   },
   {
     "id": "google-the-dalles-oregon",
@@ -29,7 +30,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Google's first purpose-built data center, opened 2006, on the Columbia River"
+    "notes": "Google's first purpose-built data center, opened 2006, on the Columbia River",
+    "year_opened": 2006
   },
   {
     "id": "google-lenoir-north-carolina",
@@ -45,7 +47,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Opened 2009"
+    "notes": "Opened 2009",
+    "year_opened": 2009
   },
   {
     "id": "google-moncks-corner-south-carolina",
@@ -61,7 +64,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Announced 2007, operational since 2009"
+    "notes": "Announced 2007, operational since 2009",
+    "year_opened": 2009
   },
   {
     "id": "google-pryor-oklahoma",
@@ -77,7 +81,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Located in MidAmerica Industrial Park, opened 2007, $600M+ expansion"
+    "notes": "Located in MidAmerica Industrial Park, opened 2007, $600M+ expansion",
+    "year_opened": 2007
   },
   {
     "id": "google-new-albany-ohio",
@@ -93,7 +98,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers, Baxtel",
-    "notes": "Multiple campus facilities in Columbus metro area"
+    "notes": "Multiple campus facilities in Columbus metro area",
+    "year_opened": 2019
   },
   {
     "id": "google-mesa-arizona",
@@ -108,7 +114,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Google Data Centers, Baxtel"
+    "source": "Google Data Centers, Baxtel",
+    "year_opened": 2020
   },
   {
     "id": "google-storey-county-nevada",
@@ -124,7 +131,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers",
-    "notes": "Over $400M invested in 2024 alone"
+    "notes": "Over $400M invested in 2024 alone",
+    "year_opened": 2020
   },
   {
     "id": "google-midlothian-texas",
@@ -140,7 +148,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Google Data Centers, Baxtel",
-    "notes": "Located in RailPort Business Park, expanding"
+    "notes": "Located in RailPort Business Park, expanding",
+    "year_opened": 2019
   },
   {
     "id": "google-hamina-finland",
@@ -156,7 +165,8 @@
     "country_code": "FI",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Converted paper mill, seawater cooling, EUR 1.2B investment"
+    "notes": "Converted paper mill, seawater cooling, EUR 1.2B investment",
+    "year_opened": 2011
   },
   {
     "id": "google-eemshaven-netherlands",
@@ -172,7 +182,8 @@
     "country_code": "NL",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "One of Google's largest European campuses, EUR 2.5B investment"
+    "notes": "One of Google's largest European campuses, EUR 2.5B investment",
+    "year_opened": 2016
   },
   {
     "id": "google-saint-ghislain-belgium",
@@ -188,7 +199,8 @@
     "country_code": "BE",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Opened 2010, near Mons"
+    "notes": "Opened 2010, near Mons",
+    "year_opened": 2010
   },
   {
     "id": "google-jurong-west-singapore",
@@ -204,7 +216,8 @@
     "country_code": "SG",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Opened 2013, Google's first Southeast Asia data center"
+    "notes": "Opened 2013, Google's first Southeast Asia data center",
+    "year_opened": 2013
   },
   {
     "id": "google-changhua-taiwan",
@@ -220,7 +233,8 @@
     "country_code": "TW",
     "status": "operational",
     "source": "Google Data Centers, Wikipedia",
-    "notes": "Opened 2013"
+    "notes": "Opened 2013",
+    "year_opened": 2013
   },
   {
     "id": "google-dublin-ireland",
@@ -236,7 +250,8 @@
     "country_code": "IE",
     "status": "operational",
     "source": "Google Data Centers, Baxtel",
-    "notes": "Located at Grange Castle Business Park"
+    "notes": "Located at Grange Castle Business Park",
+    "year_opened": 2018
   },
   {
     "id": "aws-ashburn-virginia",
@@ -252,7 +267,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "AWS Global Infrastructure, Dgtl Infra",
-    "notes": "AWS's largest region, multiple AZs in Loudoun/Prince William counties"
+    "notes": "AWS's largest region, multiple AZs in Loudoun/Prince William counties",
+    "year_opened": 2006
   },
   {
     "id": "aws-boardman-oregon",
@@ -268,7 +284,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "AWS Global Infrastructure, Dgtl Infra",
-    "notes": "Located in Morrow/Umatilla counties, 4 AZs"
+    "notes": "Located in Morrow/Umatilla counties, 4 AZs",
+    "year_opened": 2011
   },
   {
     "id": "aws-columbus-ohio",
@@ -284,7 +301,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2016
   },
   {
     "id": "aws-san-francisco-california",
@@ -300,7 +318,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2009
   },
   {
     "id": "aws-dublin-ireland",
@@ -316,7 +335,8 @@
     "country_code": "IE",
     "status": "operational",
     "source": "AWS Global Infrastructure, datacentermap.com",
-    "notes": "AWS's first European region, 3 AZs"
+    "notes": "AWS's first European region, 3 AZs",
+    "year_opened": 2007
   },
   {
     "id": "aws-frankfurt-germany",
@@ -332,7 +352,8 @@
     "country_code": "DE",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2014
   },
   {
     "id": "aws-london-united-kingdom",
@@ -348,7 +369,8 @@
     "country_code": "GB",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones, Slough area"
+    "notes": "3 Availability Zones, Slough area",
+    "year_opened": 2016
   },
   {
     "id": "aws-singapore-singapore",
@@ -364,7 +386,8 @@
     "country_code": "SG",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2010
   },
   {
     "id": "aws-tokyo-japan",
@@ -380,7 +403,8 @@
     "country_code": "JP",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "Established 2011, 4 Availability Zones"
+    "notes": "Established 2011, 4 Availability Zones",
+    "year_opened": 2011
   },
   {
     "id": "aws-sydney-australia",
@@ -396,7 +420,8 @@
     "country_code": "AU",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2012
   },
   {
     "id": "aws-mumbai-india",
@@ -412,7 +437,8 @@
     "country_code": "IN",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2016
   },
   {
     "id": "aws-sao-paulo-brazil",
@@ -428,7 +454,8 @@
     "country_code": "BR",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones, only SA region until 2025"
+    "notes": "3 Availability Zones, only SA region until 2025",
+    "year_opened": 2011
   },
   {
     "id": "aws-cape-town-south-africa",
@@ -444,7 +471,8 @@
     "country_code": "ZA",
     "status": "operational",
     "source": "AWS Global Infrastructure, DCD",
-    "notes": "AWS's first African region, launched 2020, 3 AZs"
+    "notes": "AWS's first African region, launched 2020, 3 AZs",
+    "year_opened": 2020
   },
   {
     "id": "aws-seoul-south-korea",
@@ -460,7 +488,8 @@
     "country_code": "KR",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "Established 2016, 4 Availability Zones"
+    "notes": "Established 2016, 4 Availability Zones",
+    "year_opened": 2016
   },
   {
     "id": "aws-jakarta-indonesia",
@@ -476,7 +505,8 @@
     "country_code": "ID",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "Established 2021, 3 Availability Zones"
+    "notes": "Established 2021, 3 Availability Zones",
+    "year_opened": 2021
   },
   {
     "id": "microsoft-quincy-washington",
@@ -492,7 +522,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Microsoft Azure, datacentermap.com",
-    "notes": "Major campus at 1515 Port Industrial Way, 2M+ sqft, hydropower"
+    "notes": "Major campus at 1515 Port Industrial Way, 2M+ sqft, hydropower",
+    "year_opened": 2007
   },
   {
     "id": "microsoft-san-antonio-texas",
@@ -508,7 +539,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Microsoft Azure, Baxtel",
-    "notes": "Located at 5150 Rogers Rd"
+    "notes": "Located at 5150 Rogers Rd",
+    "year_opened": 2013
   },
   {
     "id": "microsoft-boydton-virginia",
@@ -524,7 +556,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Microsoft Azure, datacentermap.com",
-    "notes": "Major campus at 101 Herbert Drive, supports US East region"
+    "notes": "Major campus at 101 Herbert Drive, supports US East region",
+    "year_opened": 2010
   },
   {
     "id": "microsoft-chicago-illinois",
@@ -540,7 +573,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Microsoft Azure, Baxtel",
-    "notes": "Located at 601 Northwest Avenue, Northlake"
+    "notes": "Located at 601 Northwest Avenue, Northlake",
+    "year_opened": 2009
   },
   {
     "id": "microsoft-goodyear-arizona",
@@ -556,7 +590,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Microsoft Azure, DCD",
-    "notes": "279-acre site near Phoenix Goodyear Airport, 5 buildings planned"
+    "notes": "279-acre site near Phoenix Goodyear Airport, 5 buildings planned",
+    "year_opened": 2021
   },
   {
     "id": "microsoft-des-moines-iowa",
@@ -572,7 +607,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports US Central region"
+    "notes": "Supports US Central region",
+    "year_opened": 2014
   },
   {
     "id": "microsoft-dublin-ireland",
@@ -588,7 +624,8 @@
     "country_code": "IE",
     "status": "operational",
     "source": "Microsoft Azure, Dgtl Infra",
-    "notes": "Grange Castle campus, supports North Europe region, $3.16B UK/Ireland investment"
+    "notes": "Grange Castle campus, supports North Europe region, $3.16B UK/Ireland investment",
+    "year_opened": 2009
   },
   {
     "id": "microsoft-amsterdam-netherlands",
@@ -604,7 +641,8 @@
     "country_code": "NL",
     "status": "operational",
     "source": "Microsoft Azure, Dgtl Infra",
-    "notes": "Supports West Europe region"
+    "notes": "Supports West Europe region",
+    "year_opened": 2019
   },
   {
     "id": "microsoft-tokyo-japan",
@@ -620,7 +658,8 @@
     "country_code": "JP",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "$2.9B Japan infrastructure investment announced"
+    "notes": "$2.9B Japan infrastructure investment announced",
+    "year_opened": 2014
   },
   {
     "id": "microsoft-singapore-singapore",
@@ -635,7 +674,8 @@
     "country": "Singapore",
     "country_code": "SG",
     "status": "operational",
-    "source": "Microsoft Azure"
+    "source": "Microsoft Azure",
+    "year_opened": 2014
   },
   {
     "id": "microsoft-sydney-australia",
@@ -651,7 +691,8 @@
     "country_code": "AU",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports Australia East region"
+    "notes": "Supports Australia East region",
+    "year_opened": 2014
   },
   {
     "id": "microsoft-sao-paulo-brazil",
@@ -667,7 +708,8 @@
     "country_code": "BR",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports Brazil South region"
+    "notes": "Supports Brazil South region",
+    "year_opened": 2014
   },
   {
     "id": "microsoft-frankfurt-germany",
@@ -683,7 +725,8 @@
     "country_code": "DE",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports Germany West Central region"
+    "notes": "Supports Germany West Central region",
+    "year_opened": 2016
   },
   {
     "id": "microsoft-madrid-spain",
@@ -699,7 +742,8 @@
     "country_code": "ES",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Part of $2.1B Spain AI/cloud infrastructure investment"
+    "notes": "Part of $2.1B Spain AI/cloud infrastructure investment",
+    "year_opened": 2023
   },
   {
     "id": "meta-prineville-oregon",
@@ -715,7 +759,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Meta Data Centers, Dgtl Infra",
-    "notes": "Meta's first owned DC, 4.6M sqft, opened 2011"
+    "notes": "Meta's first owned DC, 4.6M sqft, opened 2011",
+    "year_opened": 2011
   },
   {
     "id": "meta-fort-worth-texas",
@@ -731,7 +776,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Meta Data Centers, Dgtl Infra",
-    "notes": "5 data centers, 2.6M sqft, opened 2017"
+    "notes": "5 data centers, 2.6M sqft, opened 2017",
+    "year_opened": 2017
   },
   {
     "id": "meta-altoona-iowa",
@@ -747,7 +793,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Meta Data Centers, Dgtl Infra",
-    "notes": "Located at 100 Share Way NW, 140MW wind PPA"
+    "notes": "Located at 100 Share Way NW, 140MW wind PPA",
+    "year_opened": 2014
   },
   {
     "id": "meta-new-albany-ohio",
@@ -763,7 +810,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Meta Data Centers, Dgtl Infra",
-    "notes": "Prometheus campus"
+    "notes": "Prometheus campus",
+    "year_opened": 2019
   },
   {
     "id": "meta-dekalb-illinois",
@@ -779,7 +827,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Meta Data Centers",
-    "notes": "Located at 515 E Gurler Road"
+    "notes": "Located at 515 E Gurler Road",
+    "year_opened": 2020
   },
   {
     "id": "meta-gallatin-tennessee",
@@ -795,7 +844,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Meta Data Centers",
-    "notes": "Located at 1 Meta Loop"
+    "notes": "Located at 1 Meta Loop",
+    "year_opened": 2020
   },
   {
     "id": "meta-eagle-mountain-utah",
@@ -810,7 +860,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Meta Data Centers, Baxtel"
+    "source": "Meta Data Centers, Baxtel",
+    "year_opened": 2021
   },
   {
     "id": "meta-lulea-sweden",
@@ -826,7 +877,8 @@
     "country_code": "SE",
     "status": "operational",
     "source": "Meta Data Centers, Dgtl Infra",
-    "notes": "3 DCs, 1M sqft, opened 2013, near Arctic Circle, hydropower"
+    "notes": "3 DCs, 1M sqft, opened 2013, near Arctic Circle, hydropower",
+    "year_opened": 2013
   },
   {
     "id": "meta-clonee-ireland",
@@ -842,7 +894,8 @@
     "country_code": "IE",
     "status": "operational",
     "source": "Meta Data Centers, Baxtel",
-    "notes": "Near Dublin"
+    "notes": "Near Dublin",
+    "year_opened": 2018
   },
   {
     "id": "meta-richland-parish-louisiana",
@@ -858,7 +911,8 @@
     "country_code": "US",
     "status": "under_construction",
     "source": "Meta Data Centers",
-    "notes": "$10B investment, massive AI training campus"
+    "notes": "$10B investment, massive AI training campus",
+    "year_opened": 2026
   },
   {
     "id": "apple-maiden-north-carolina",
@@ -874,7 +928,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Apple, Dgtl Infra",
-    "notes": "Apple's flagship iDataCenter, 500,000 sqft"
+    "notes": "Apple's flagship iDataCenter, 500,000 sqft",
+    "year_opened": 2010
   },
   {
     "id": "apple-mesa-arizona",
@@ -890,7 +945,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Apple, Dgtl Infra",
-    "notes": "Converted sapphire glass factory"
+    "notes": "Converted sapphire glass factory",
+    "year_opened": 2017
   },
   {
     "id": "apple-reno-nevada",
@@ -905,7 +961,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Apple, Dgtl Infra"
+    "source": "Apple, Dgtl Infra",
+    "year_opened": 2018
   },
   {
     "id": "apple-prineville-oregon",
@@ -921,7 +978,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Apple, Dgtl Infra",
-    "notes": "Initial 20MW draw"
+    "notes": "Initial 20MW draw",
+    "year_opened": 2014
   },
   {
     "id": "apple-viborg-denmark",
@@ -937,7 +995,8 @@
     "country_code": "DK",
     "status": "operational",
     "source": "Apple, Dgtl Infra",
-    "notes": "Apple's European data center, 100% renewable energy"
+    "notes": "Apple's European data center, 100% renewable energy",
+    "year_opened": 2020
   },
   {
     "id": "xai-memphis-tennessee",
@@ -953,7 +1012,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "datacentermap.com, Semi Analysis",
-    "notes": "100,000 NVIDIA H100 GPUs at 3231 Riverport Rd, world's largest AI training cluster at launch"
+    "notes": "100,000 NVIDIA H100 GPUs at 3231 Riverport Rd, world's largest AI training cluster at launch",
+    "year_opened": 2024
   },
   {
     "id": "xai-whitehaven-tennessee",
@@ -969,7 +1029,8 @@
     "country_code": "US",
     "status": "under_construction",
     "source": "Semi Analysis, DCD",
-    "notes": "5400 Tulane Rd Whitehaven, targeting 1GW+ total, first gigawatt AI datacenter"
+    "notes": "5400 Tulane Rd Whitehaven, targeting 1GW+ total, first gigawatt AI datacenter",
+    "year_opened": 2025
   },
   {
     "id": "coreweave-weehawken-new-jersey",
@@ -985,7 +1046,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "CoreWeave, Dgtl Infra",
-    "notes": "CoreWeave HQ area facility"
+    "notes": "CoreWeave HQ area facility",
+    "year_opened": 2023
   },
   {
     "id": "coreweave-chicago-illinois",
@@ -1000,7 +1062,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "CoreWeave, Dgtl Infra"
+    "source": "CoreWeave, Dgtl Infra",
+    "year_opened": 2023
   },
   {
     "id": "coreweave-lancaster-pennsylvania",
@@ -1016,7 +1079,8 @@
     "country_code": "US",
     "status": "under_construction",
     "source": "CoreWeave, DCD",
-    "notes": "$6B investment, initial 100MW scaling to 300MW"
+    "notes": "$6B investment, initial 100MW scaling to 300MW",
+    "year_opened": 2025
   },
   {
     "id": "coreweave-ellendale-north-dakota",
@@ -1032,7 +1096,8 @@
     "country_code": "US",
     "status": "under_construction",
     "source": "Applied Digital, Dgtl Infra",
-    "notes": "250MW lease with Applied Digital"
+    "notes": "250MW lease with Applied Digital",
+    "year_opened": 2025
   },
   {
     "id": "coreweave-london-united-kingdom",
@@ -1048,7 +1113,8 @@
     "country_code": "GB",
     "status": "operational",
     "source": "CoreWeave, Dgtl Infra",
-    "notes": "One of two UK data centers opened 2024"
+    "notes": "One of two UK data centers opened 2024",
+    "year_opened": 2024
   },
   {
     "id": "lambda-austin-texas",
@@ -1064,7 +1130,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Lambda, datacentermap.com",
-    "notes": "GPU cloud AI infrastructure"
+    "notes": "GPU cloud AI infrastructure",
+    "year_opened": 2022
   },
   {
     "id": "lambda-plano-texas",
@@ -1080,7 +1147,8 @@
     "country_code": "US",
     "status": "under_construction",
     "source": "Lambda, Dallas Morning News",
-    "notes": "NVIDIA-backed, $700M facility"
+    "notes": "NVIDIA-backed, $700M facility",
+    "year_opened": 2025
   },
   {
     "id": "cerebras-santa-clara-california",
@@ -1096,7 +1164,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Cerebras, DCD",
-    "notes": "AI inference data center, currently online"
+    "notes": "AI inference data center, currently online",
+    "year_opened": 2023
   },
   {
     "id": "cerebras-dallas-texas",
@@ -1112,7 +1181,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Cerebras, SiliconANGLE",
-    "notes": "AI inference data center, currently online"
+    "notes": "AI inference data center, currently online",
+    "year_opened": 2023
   },
   {
     "id": "nvidia-santa-clara-california",
@@ -1128,7 +1198,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "NVIDIA",
-    "notes": "NVIDIA headquarters with internal AI research infrastructure and DGX SuperPODs"
+    "notes": "NVIDIA headquarters with internal AI research infrastructure and DGX SuperPODs",
+    "year_opened": 2022
   },
   {
     "id": "equinix-ashburn-virginia",
@@ -1144,7 +1215,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Equinix, datacentermap.com",
-    "notes": "Multiple IBX facilities (DC1-DC22), major interconnection hub"
+    "notes": "Multiple IBX facilities (DC1-DC22), major interconnection hub",
+    "year_opened": 1998
   },
   {
     "id": "equinix-san-jose-california",
@@ -1160,7 +1232,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Equinix, PeeringDB",
-    "notes": "9 Great Oaks Blvd, key Silicon Valley interconnection point"
+    "notes": "9 Great Oaks Blvd, key Silicon Valley interconnection point",
+    "year_opened": 2000
   },
   {
     "id": "equinix-chicago-illinois",
@@ -1176,7 +1249,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Multiple Chicago metro IBX facilities"
+    "notes": "Multiple Chicago metro IBX facilities",
+    "year_opened": 2001
   },
   {
     "id": "equinix-dallas-texas",
@@ -1192,7 +1266,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Multiple Dallas metro IBX facilities"
+    "notes": "Multiple Dallas metro IBX facilities",
+    "year_opened": 2002
   },
   {
     "id": "equinix-amsterdam-netherlands",
@@ -1208,7 +1283,8 @@
     "country_code": "NL",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Major European interconnection hub, Science Park and SE locations"
+    "notes": "Major European interconnection hub, Science Park and SE locations",
+    "year_opened": 2002
   },
   {
     "id": "equinix-london-united-kingdom",
@@ -1224,7 +1300,8 @@
     "country_code": "GB",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Multiple London IBX facilities including Harbour Exchange and Slough"
+    "notes": "Multiple London IBX facilities including Harbour Exchange and Slough",
+    "year_opened": 2003
   },
   {
     "id": "equinix-frankfurt-germany",
@@ -1240,7 +1317,8 @@
     "country_code": "DE",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Key European interconnection point, multiple xScale facilities"
+    "notes": "Key European interconnection point, multiple xScale facilities",
+    "year_opened": 2004
   },
   {
     "id": "equinix-tokyo-japan",
@@ -1256,7 +1334,8 @@
     "country_code": "JP",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Multiple Tokyo metro IBX facilities including xScale hyperscale"
+    "notes": "Multiple Tokyo metro IBX facilities including xScale hyperscale",
+    "year_opened": 2002
   },
   {
     "id": "equinix-singapore-singapore",
@@ -1272,7 +1351,8 @@
     "country_code": "SG",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Major APAC interconnection hub, Tai Seng and Sunview locations"
+    "notes": "Major APAC interconnection hub, Tai Seng and Sunview locations",
+    "year_opened": 2003
   },
   {
     "id": "equinix-sydney-australia",
@@ -1288,7 +1368,8 @@
     "country_code": "AU",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Multiple Sydney IBX facilities"
+    "notes": "Multiple Sydney IBX facilities",
+    "year_opened": 2012
   },
   {
     "id": "digital-realty-ashburn-virginia",
@@ -1304,7 +1385,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Digital Realty, Baxtel",
-    "notes": "98-acre Loudoun campus, 9 data centers"
+    "notes": "98-acre Loudoun campus, 9 data centers",
+    "year_opened": 2005
   },
   {
     "id": "digital-realty-richardson-texas",
@@ -1320,7 +1402,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "Digital Realty, Baxtel",
-    "notes": "DFW18 at 1210 Integrity Drive, 100MW expansion land acquired"
+    "notes": "DFW18 at 1210 Integrity Drive, 100MW expansion land acquired",
+    "year_opened": 2006
   },
   {
     "id": "digital-realty-frankfurt-germany",
@@ -1336,7 +1419,8 @@
     "country_code": "DE",
     "status": "operational",
     "source": "Digital Realty",
-    "notes": "Hanauer Landstrasse 296A"
+    "notes": "Hanauer Landstrasse 296A",
+    "year_opened": 2010
   },
   {
     "id": "digital-realty-singapore-singapore",
@@ -1352,7 +1436,8 @@
     "country_code": "SG",
     "status": "operational",
     "source": "Digital Realty",
-    "notes": "7-story facility in Jurong East, 29A International Business Park"
+    "notes": "7-story facility in Jurong East, 29A International Business Park",
+    "year_opened": 2014
   },
   {
     "id": "digital-realty-charlotte-north-carolina",
@@ -1368,7 +1453,8 @@
     "country_code": "US",
     "status": "under_construction",
     "source": "Digital Realty",
-    "notes": "156-acre Moores Chapel Rd site, up to 400MW capacity"
+    "notes": "156-acre Moores Chapel Rd site, up to 400MW capacity",
+    "year_opened": 2026
   },
   {
     "id": "ntt-ashburn-virginia",
@@ -1384,7 +1470,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "NTT Global Data Centers, Caeled",
-    "notes": "Major US connectivity hub"
+    "notes": "Major US connectivity hub",
+    "year_opened": 2010
   },
   {
     "id": "ntt-tokyo-japan",
@@ -1400,7 +1487,8 @@
     "country_code": "JP",
     "status": "operational",
     "source": "NTT Global Data Centers",
-    "notes": "Multiple facilities in Tokyo metro, NTT's home market"
+    "notes": "Multiple facilities in Tokyo metro, NTT's home market",
+    "year_opened": 2000
   },
   {
     "id": "ntt-london-united-kingdom",
@@ -1415,7 +1503,8 @@
     "country": "United Kingdom",
     "country_code": "GB",
     "status": "operational",
-    "source": "NTT Global Data Centers"
+    "source": "NTT Global Data Centers",
+    "year_opened": 2015
   },
   {
     "id": "cyrusone-carrollton-texas",
@@ -1431,7 +1520,8 @@
     "country_code": "US",
     "status": "operational",
     "source": "CyrusOne",
-    "notes": "One of CyrusOne's largest US campuses"
+    "notes": "One of CyrusOne's largest US campuses",
+    "year_opened": 2010
   },
   {
     "id": "cyrusone-chandler-arizona",
@@ -1446,7 +1536,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "CyrusOne"
+    "source": "CyrusOne",
+    "year_opened": 2015
   },
   {
     "id": "cyrusone-frankfurt-germany",
@@ -1462,7 +1553,8 @@
     "country_code": "DE",
     "status": "operational",
     "source": "CyrusOne",
-    "notes": "European operations hub"
+    "notes": "European operations hub",
+    "year_opened": 2017
   },
   {
     "id": "alibaba-zhangbei-china",
@@ -1478,7 +1570,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Alibaba Cloud, Dgtl Infra",
-    "notes": "Zhongdu Grassland Project, 165 acres, cold-climate cooling"
+    "notes": "Zhongdu Grassland Project, 165 acres, cold-climate cooling",
+    "year_opened": 2016
   },
   {
     "id": "alibaba-hangzhou-china",
@@ -1494,7 +1587,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Alibaba Cloud",
-    "notes": "Liquid immersion cooling, near Alibaba HQ"
+    "notes": "Liquid immersion cooling, near Alibaba HQ",
+    "year_opened": 2015
   },
   {
     "id": "alibaba-ulanqab-china",
@@ -1510,7 +1604,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Alibaba Cloud, DCD",
-    "notes": "Free-air cooling 10 months/year, temps drop to -22C"
+    "notes": "Free-air cooling 10 months/year, temps drop to -22C",
+    "year_opened": 2018
   },
   {
     "id": "alibaba-singapore-singapore",
@@ -1525,7 +1620,8 @@
     "country": "Singapore",
     "country_code": "SG",
     "status": "operational",
-    "source": "Alibaba Cloud"
+    "source": "Alibaba Cloud",
+    "year_opened": 2015
   },
   {
     "id": "tencent-qingyuan-china",
@@ -1541,7 +1637,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Tencent Cloud, eyeshenzhen.com",
-    "notes": "Largest new infra project in South China, 1M+ server capacity, 26.6 hectares"
+    "notes": "Largest new infra project in South China, 1M+ server capacity, 26.6 hectares",
+    "year_opened": 2020
   },
   {
     "id": "tencent-guiyang-china",
@@ -1557,7 +1654,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Tencent Cloud, datacentermap.com",
-    "notes": "513,000 sqm, stores Tencent's most critical data"
+    "notes": "513,000 sqm, stores Tencent's most critical data",
+    "year_opened": 2018
   },
   {
     "id": "tencent-tianjin-china",
@@ -1573,7 +1671,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Tencent Cloud, idcnova.com",
-    "notes": "10B yuan investment, 15,000 racks, 300,000 servers"
+    "notes": "10B yuan investment, 15,000 racks, 300,000 servers",
+    "year_opened": 2019
   },
   {
     "id": "baidu-yangquan-china",
@@ -1589,7 +1688,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Baidu, idcnova.com",
-    "notes": "Largest single-unit DC in Asia at launch, 280,000 servers, 80,000 AI servers in phase II"
+    "notes": "Largest single-unit DC in Asia at launch, 280,000 servers, 80,000 AI servers in phase II",
+    "year_opened": 2014
   },
   {
     "id": "baidu-baoding-china",
@@ -1605,7 +1705,8 @@
     "country_code": "CN",
     "status": "operational",
     "source": "Baidu, Xinhua",
-    "notes": "Two facilities in Xushui and Dingxing, 4B yuan investment, Baidu Brain AI infrastructure"
+    "notes": "Two facilities in Xushui and Dingxing, 4B yuan investment, Baidu Brain AI infrastructure",
+    "year_opened": 2017
   },
   {
     "id": "oracle-ashburn-virginia",
@@ -1620,7 +1721,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Oracle Cloud, Dgtl Infra"
+    "source": "Oracle Cloud, Dgtl Infra",
+    "year_opened": 2019
   },
   {
     "id": "oracle-phoenix-arizona",
@@ -1635,7 +1737,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Oracle Cloud, Dgtl Infra"
+    "source": "Oracle Cloud, Dgtl Infra",
+    "year_opened": 2019
   },
   {
     "id": "oracle-london-united-kingdom",
@@ -1650,7 +1753,8 @@
     "country": "United Kingdom",
     "country_code": "GB",
     "status": "operational",
-    "source": "Oracle Cloud"
+    "source": "Oracle Cloud",
+    "year_opened": 2020
   },
   {
     "id": "oracle-port-washington-wisconsin",
@@ -1666,7 +1770,8 @@
     "country_code": "US",
     "status": "planned",
     "source": "Data Center Frontier",
-    "notes": "Joint Oracle/OpenAI/Vantage project, nearly 1GW AI capacity, target 2028"
+    "notes": "Joint Oracle/OpenAI/Vantage project, nearly 1GW AI capacity, target 2028",
+    "year_opened": 2028
   },
   {
     "id": "ibm-dallas-texas",
@@ -1681,7 +1786,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "IBM Cloud"
+    "source": "IBM Cloud",
+    "year_opened": 2004
   },
   {
     "id": "ibm-london-united-kingdom",
@@ -1697,7 +1803,8 @@
     "country_code": "GB",
     "status": "operational",
     "source": "IBM Cloud",
-    "notes": "Multiple London facilities"
+    "notes": "Multiple London facilities",
+    "year_opened": 2005
   },
   {
     "id": "ibm-frankfurt-germany",
@@ -1712,7 +1819,8 @@
     "country": "Germany",
     "country_code": "DE",
     "status": "operational",
-    "source": "IBM Cloud"
+    "source": "IBM Cloud",
+    "year_opened": 2010
   },
   {
     "id": "ibm-tokyo-japan",
@@ -1727,7 +1835,8 @@
     "country": "Japan",
     "country_code": "JP",
     "status": "operational",
-    "source": "IBM Cloud"
+    "source": "IBM Cloud",
+    "year_opened": 2009
   },
   {
     "id": "salesforce-chicago-illinois",
@@ -1742,7 +1851,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Salesforce"
+    "source": "Salesforce",
+    "year_opened": 2012
   },
   {
     "id": "salesforce-dallas-texas",
@@ -1757,7 +1867,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Salesforce"
+    "source": "Salesforce",
+    "year_opened": 2012
   },
   {
     "id": "salesforce-frankfurt-germany",
@@ -1772,7 +1883,8 @@
     "country": "Germany",
     "country_code": "DE",
     "status": "operational",
-    "source": "Salesforce"
+    "source": "Salesforce",
+    "year_opened": 2015
   },
   {
     "id": "salesforce-tokyo-japan",
@@ -1787,7 +1899,8 @@
     "country": "Japan",
     "country_code": "JP",
     "status": "operational",
-    "source": "Salesforce"
+    "source": "Salesforce",
+    "year_opened": 2014
   },
   {
     "id": "sap-walldorf-germany",
@@ -1803,7 +1916,8 @@
     "country_code": "DE",
     "status": "operational",
     "source": "SAP",
-    "notes": "Near SAP headquarters"
+    "notes": "Near SAP headquarters",
+    "year_opened": 2012
   },
   {
     "id": "sap-amsterdam-netherlands",
@@ -1818,7 +1932,8 @@
     "country": "Netherlands",
     "country_code": "NL",
     "status": "operational",
-    "source": "SAP"
+    "source": "SAP",
+    "year_opened": 2014
   },
   {
     "id": "google-clarksville-tennessee",
@@ -1833,7 +1948,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Google Data Centers, Baxtel"
+    "source": "Google Data Centers, Baxtel",
+    "year_opened": 2019
   },
   {
     "id": "aws-bahrain-bahrain",
@@ -1849,7 +1965,8 @@
     "country_code": "BH",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "First AWS Middle East region, 3 AZs"
+    "notes": "First AWS Middle East region, 3 AZs",
+    "year_opened": 2019
   },
   {
     "id": "microsoft-mumbai-india",
@@ -1865,7 +1982,8 @@
     "country_code": "IN",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports Central India region"
+    "notes": "Supports Central India region",
+    "year_opened": 2015
   },
   {
     "id": "microsoft-johannesburg-south-africa",
@@ -1881,7 +1999,8 @@
     "country_code": "ZA",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports South Africa North region"
+    "notes": "Supports South Africa North region",
+    "year_opened": 2019
   },
   {
     "id": "aws-hyderabad-india",
@@ -1897,7 +2016,8 @@
     "country_code": "IN",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "Second India region, 3 AZs"
+    "notes": "Second India region, 3 AZs",
+    "year_opened": 2022
   },
   {
     "id": "equinix-sao-paulo-brazil",
@@ -1913,7 +2033,8 @@
     "country_code": "BR",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Major Latin America interconnection hub"
+    "notes": "Major Latin America interconnection hub",
+    "year_opened": 2013
   },
   {
     "id": "digital-realty-mumbai-india",
@@ -1929,7 +2050,8 @@
     "country_code": "IN",
     "status": "operational",
     "source": "Digital Realty",
-    "notes": "First India data center, 10-acre campus, up to 100MW"
+    "notes": "First India data center, 10-acre campus, up to 100MW",
+    "year_opened": 2022
   },
   {
     "id": "meta-los-lunas-new-mexico",
@@ -1944,7 +2066,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Meta Data Centers"
+    "source": "Meta Data Centers",
+    "year_opened": 2019
   },
   {
     "id": "meta-mesa-arizona",
@@ -1959,7 +2082,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "Meta Data Centers"
+    "source": "Meta Data Centers",
+    "year_opened": 2020
   },
   {
     "id": "aws-stockholm-sweden",
@@ -1975,7 +2099,8 @@
     "country_code": "SE",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones, Nordic region"
+    "notes": "3 Availability Zones, Nordic region",
+    "year_opened": 2018
   },
   {
     "id": "microsoft-seoul-south-korea",
@@ -1991,7 +2116,8 @@
     "country_code": "KR",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports Korea Central region"
+    "notes": "Supports Korea Central region",
+    "year_opened": 2017
   },
   {
     "id": "google-zurich-switzerland",
@@ -2006,7 +2132,8 @@
     "country": "Switzerland",
     "country_code": "CH",
     "status": "operational",
-    "source": "Google Cloud, Baxtel"
+    "source": "Google Cloud, Baxtel",
+    "year_opened": 2019
   },
   {
     "id": "tencent-singapore-singapore",
@@ -2021,7 +2148,8 @@
     "country": "Singapore",
     "country_code": "SG",
     "status": "operational",
-    "source": "Tencent Cloud"
+    "source": "Tencent Cloud",
+    "year_opened": 2018
   },
   {
     "id": "alibaba-jakarta-indonesia",
@@ -2036,7 +2164,8 @@
     "country": "Indonesia",
     "country_code": "ID",
     "status": "operational",
-    "source": "Alibaba Cloud"
+    "source": "Alibaba Cloud",
+    "year_opened": 2018
   },
   {
     "id": "ntt-singapore-singapore",
@@ -2051,7 +2180,8 @@
     "country": "Singapore",
     "country_code": "SG",
     "status": "operational",
-    "source": "NTT Global Data Centers"
+    "source": "NTT Global Data Centers",
+    "year_opened": 2012
   },
   {
     "id": "ntt-mumbai-india",
@@ -2066,7 +2196,8 @@
     "country": "India",
     "country_code": "IN",
     "status": "operational",
-    "source": "NTT Global Data Centers"
+    "source": "NTT Global Data Centers",
+    "year_opened": 2019
   },
   {
     "id": "microsoft-london-united-kingdom",
@@ -2082,7 +2213,8 @@
     "country_code": "GB",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports UK South region, part of $3.16B UK investment"
+    "notes": "Supports UK South region, part of $3.16B UK investment",
+    "year_opened": 2016
   },
   {
     "id": "oracle-tokyo-japan",
@@ -2097,7 +2229,8 @@
     "country": "Japan",
     "country_code": "JP",
     "status": "operational",
-    "source": "Oracle Cloud"
+    "source": "Oracle Cloud",
+    "year_opened": 2020
   },
   {
     "id": "oracle-sao-paulo-brazil",
@@ -2112,7 +2245,8 @@
     "country": "Brazil",
     "country_code": "BR",
     "status": "operational",
-    "source": "Oracle Cloud"
+    "source": "Oracle Cloud",
+    "year_opened": 2020
   },
   {
     "id": "aws-milan-italy",
@@ -2128,7 +2262,8 @@
     "country_code": "IT",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2020
   },
   {
     "id": "microsoft-qatar-doha",
@@ -2144,7 +2279,8 @@
     "country_code": "QA",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports Qatar region"
+    "notes": "Supports Qatar region",
+    "year_opened": 2022
   },
   {
     "id": "equinix-mumbai-india",
@@ -2159,7 +2295,8 @@
     "country": "India",
     "country_code": "IN",
     "status": "operational",
-    "source": "Equinix"
+    "source": "Equinix",
+    "year_opened": 2019
   },
   {
     "id": "equinix-paris-france",
@@ -2175,7 +2312,8 @@
     "country_code": "FR",
     "status": "operational",
     "source": "Equinix",
-    "notes": "Multiple Paris metro IBX facilities including xScale"
+    "notes": "Multiple Paris metro IBX facilities including xScale",
+    "year_opened": 2005
   },
   {
     "id": "coreweave-stavanger-norway",
@@ -2191,7 +2329,8 @@
     "country_code": "NO",
     "status": "under_construction",
     "source": "CoreWeave, Dgtl Infra",
-    "notes": "Part of $2.2B European expansion"
+    "notes": "Part of $2.2B European expansion",
+    "year_opened": 2025
   },
   {
     "id": "aws-paris-france",
@@ -2207,7 +2346,8 @@
     "country_code": "FR",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "3 Availability Zones"
+    "notes": "3 Availability Zones",
+    "year_opened": 2017
   },
   {
     "id": "google-mumbai-india",
@@ -2222,7 +2362,8 @@
     "country": "India",
     "country_code": "IN",
     "status": "operational",
-    "source": "Google Cloud, Baxtel"
+    "source": "Google Cloud, Baxtel",
+    "year_opened": 2021
   },
   {
     "id": "aws-osaka-japan",
@@ -2238,7 +2379,8 @@
     "country_code": "JP",
     "status": "operational",
     "source": "AWS Global Infrastructure",
-    "notes": "Established 2021, 3 Availability Zones"
+    "notes": "Established 2021, 3 Availability Zones",
+    "year_opened": 2021
   },
   {
     "id": "meta-odense-denmark",
@@ -2253,7 +2395,8 @@
     "country": "Denmark",
     "country_code": "DK",
     "status": "operational",
-    "source": "Meta Data Centers, Baxtel"
+    "source": "Meta Data Centers, Baxtel",
+    "year_opened": 2020
   },
   {
     "id": "microsoft-campinas-brazil",
@@ -2269,7 +2412,8 @@
     "country_code": "BR",
     "status": "operational",
     "source": "Microsoft Azure",
-    "notes": "Supports Brazil South region"
+    "notes": "Supports Brazil South region",
+    "year_opened": 2014
   },
   {
     "id": "sap-colorado-springs-colorado",
@@ -2284,7 +2428,8 @@
     "country": "United States",
     "country_code": "US",
     "status": "operational",
-    "source": "SAP"
+    "source": "SAP",
+    "year_opened": 2013
   },
   {
     "id": "google-fredericia-denmark",
@@ -2299,7 +2444,8 @@
     "country": "Denmark",
     "country_code": "DK",
     "status": "operational",
-    "source": "Google Data Centers, Baxtel"
+    "source": "Google Data Centers, Baxtel",
+    "year_opened": 2020
   },
   {
     "id": "ntt-frankfurt-germany",
@@ -2315,6 +2461,7 @@
     "country_code": "DE",
     "status": "operational",
     "source": "NTT Global Data Centers",
-    "notes": "Major European hub"
+    "notes": "Major European hub",
+    "year_opened": 2012
   }
 ]

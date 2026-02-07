@@ -1,5 +1,5 @@
 import type { ActiveTab, DCType, DCStatus } from '../hooks/useMapSelection';
-import { ALL_TYPES, ALL_STATUSES, MW_MIN, MW_MAX } from '../hooks/useMapSelection';
+import { ALL_TYPES, ALL_STATUSES, MW_MIN, MW_MAX, YEAR_MIN, YEAR_MAX, YEAR_DEFAULT } from '../hooks/useMapSelection';
 import type { CountrySummary, CompanySummary, Datacenter } from '../types/datacenter';
 import { typeColor, typeLabel, statusLabel, formatMW } from '../lib/dataUtils';
 import SidebarCountryTab from './SidebarCountryTab';
@@ -19,9 +19,13 @@ interface Props {
   activeTypes: Set<DCType>;
   activeStatuses: Set<DCStatus>;
   mwRange: [number, number];
+  selectedYear: number;
+  showPlanned: boolean;
   onToggleType: (t: DCType) => void;
   onToggleStatus: (s: DCStatus) => void;
   onSetMwRange: (range: [number, number]) => void;
+  onSetYear: (year: number) => void;
+  onToggleShowPlanned: () => void;
   onResetFilters: () => void;
   onSelectCountry: (code: string) => void;
   onSelectCompany: (company: string) => void;
@@ -54,9 +58,13 @@ export default function Sidebar({
   activeTypes,
   activeStatuses,
   mwRange,
+  selectedYear,
+  showPlanned,
   onToggleType,
   onToggleStatus,
   onSetMwRange,
+  onSetYear,
+  onToggleShowPlanned,
   onResetFilters,
   onSelectCountry,
   onSelectCompany,
@@ -67,7 +75,9 @@ export default function Sidebar({
     activeTypes.size !== ALL_TYPES.length ||
     activeStatuses.size !== ALL_STATUSES.length ||
     mwRange[0] !== MW_MIN ||
-    mwRange[1] !== MW_MAX;
+    mwRange[1] !== MW_MAX ||
+    selectedYear !== YEAR_DEFAULT ||
+    !showPlanned;
 
   return (
     <div className="sidebar">
@@ -79,6 +89,35 @@ export default function Sidebar({
       </div>
 
       <div className="sidebar-filters">
+        <div className="filter-group year-slider-group">
+          <div className="filter-label">
+            Timeline: <span className="year-display">{selectedYear}</span>
+          </div>
+          <input
+            type="range"
+            className="year-slider"
+            min={YEAR_MIN}
+            max={YEAR_MAX}
+            step={1}
+            value={selectedYear}
+            style={{ '--year-progress': `${((selectedYear - YEAR_MIN) / (YEAR_MAX - YEAR_MIN)) * 100}%` } as React.CSSProperties}
+            onChange={(e) => onSetYear(Number(e.target.value))}
+          />
+          <div className="year-slider-labels">
+            <span>{YEAR_MIN}</span>
+            <span>{YEAR_MAX}</span>
+          </div>
+          <label className="show-planned-label">
+            <input
+              type="checkbox"
+              className="show-planned-checkbox"
+              checked={showPlanned}
+              onChange={onToggleShowPlanned}
+            />
+            Show planned
+          </label>
+        </div>
+
         <div className="filter-group">
           <div className="filter-label">Type</div>
           <div className="filter-chips">

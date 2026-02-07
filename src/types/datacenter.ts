@@ -13,6 +13,7 @@ export interface Datacenter {
   status: 'operational' | 'under_construction' | 'planned';
   source: string;
   notes?: string;
+  year_opened: number;
 }
 
 export interface CountrySummary {

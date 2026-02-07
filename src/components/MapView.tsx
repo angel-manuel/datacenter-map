@@ -14,6 +14,7 @@ import 'react-leaflet-cluster/dist/assets/MarkerCluster.Default.css';
 
 interface Props {
   datacenters: Datacenter[];
+  futureDCIds: Set<string>;
   geoData: FeatureCollection<Geometry, CountryFeatureProperties> | null;
   countriesWithDCs: Set<string>;
   selectedCountryCode: string | null;
@@ -71,6 +72,7 @@ function CountryZoomHandler({
 
 export default function MapView({
   datacenters,
+  futureDCIds,
   geoData,
   countriesWithDCs,
   selectedCountryCode,
@@ -111,6 +113,7 @@ export default function MapView({
 
       <DatacenterMarkers
         datacenters={datacenters}
+        futureDCIds={futureDCIds}
         selectedCountryCode={selectedCountryCode}
         selectedCompany={selectedCompany}
         selectedDatacenterId={selectedDatacenterId}
