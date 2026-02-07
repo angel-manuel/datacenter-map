@@ -145,3 +145,5 @@ vite.config.ts.timestamp-*
 
 # Claude
 .claude/settings.local.json
+.vercel
+.env*.local
