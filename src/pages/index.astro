@@ -1,17 +1,17 @@
 ---
-
+import '../styles/global.css';
+import MapApp from '../components/MapApp';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Datacenter World Map</title>
+		<meta name="description" content="Interactive map of major cloud and AI datacenters worldwide" />
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<MapApp client:only="react" />
 	</body>
 </html>
