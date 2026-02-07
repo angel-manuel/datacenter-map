@@ -1,6 +1,6 @@
 import type { ActiveTab, DCType, DCStatus } from '../hooks/useMapSelection';
 import { ALL_TYPES, ALL_STATUSES, MW_MIN, MW_MAX, YEAR_MIN, YEAR_MAX, YEAR_DEFAULT } from '../hooks/useMapSelection';
-import type { CountrySummary, CompanySummary, Datacenter } from '../types/datacenter';
+import type { CountrySummary, CompanySummary, Datacenter, SubmarineCable, LandingPoint, IXP } from '../types/datacenter';
 import { typeColor, typeLabel, statusLabel, formatMW } from '../lib/dataUtils';
 import SidebarCountryTab from './SidebarCountryTab';
 import SidebarCompanyTab from './SidebarCompanyTab';
@@ -14,6 +14,9 @@ interface Props {
   selectedCountryCode: string | null;
   selectedCompany: string | null;
   selectedDatacenter: Datacenter | undefined;
+  selectedCable: SubmarineCable | undefined;
+  selectedIxp: IXP | undefined;
+  landingPoints: LandingPoint[];
   totalDCs: number;
   totalAll: number;
   activeTypes: Set<DCType>;
@@ -53,6 +56,9 @@ export default function Sidebar({
   selectedCountryCode,
   selectedCompany,
   selectedDatacenter,
+  selectedCable,
+  selectedIxp,
+  landingPoints,
   totalDCs,
   totalAll,
   activeTypes,
@@ -229,6 +235,9 @@ export default function Sidebar({
         {activeTab === 'details' && (
           <SidebarDetailsTab
             datacenter={selectedDatacenter}
+            cable={selectedCable}
+            ixp={selectedIxp}
+            landingPoints={landingPoints}
             onSelectCompany={onSelectCompany}
             onSelectCountry={onSelectCountry}
           />
