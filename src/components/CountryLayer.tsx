@@ -49,10 +49,10 @@ function getStyle(
     };
   }
   return {
-    fillColor: '#1e293b',
-    fillOpacity: 0.3,
-    color: '#334155',
-    weight: 0.5,
+    fillColor: 'transparent',
+    fillOpacity: 0,
+    color: 'transparent',
+    weight: 0,
   };
 }
 
