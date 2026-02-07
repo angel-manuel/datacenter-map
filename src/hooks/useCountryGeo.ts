@@ -13,7 +13,7 @@ export function useCountryGeo() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/countries-110m.json')
+    fetch(`${import.meta.env.BASE_URL}/data/countries-110m.json`)
       .then((res) => res.json())
       .then((topo: Topology) => {
         const countries = topojson.feature(

@@ -7,7 +7,7 @@ export function useDatacenters() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetch('/data/datacenters.json')
+    fetch(`${import.meta.env.BASE_URL}/data/datacenters.json`)
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
